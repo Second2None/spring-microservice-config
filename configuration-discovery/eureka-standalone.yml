@@ -1,0 +1,10 @@
+eureka:
+  client:
+    fetchRegistry: false
+    healthcheck:
+      enabled: true
+    registerWithEureka: false
+  instance:
+    hostname: eureka-standalone
+server:
+  port: 8010

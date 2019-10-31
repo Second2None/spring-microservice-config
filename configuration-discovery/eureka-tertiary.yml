@@ -1,0 +1,24 @@
+eureka:
+  client:
+    fetchRegistry: true
+    healthcheck:
+      enabled: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://eureka-primary:8010/eureka/,http://eureka-secondary:8011/eureka/
+  environment: local
+  instance:
+    hostname: eureka-tertiary
+    metadataMap:
+      zone: Zone1
+    preferIpAddress: false
+  server:
+    eviction-interval-timer-in-ms: 20000
+  shouldBatchReplication: true
+server:
+  port: 8012
+spring:
+  application:
+    name: eureka-server-clustered
+  profiles:
+    active: tertiary

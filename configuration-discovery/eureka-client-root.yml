@@ -1,0 +1,16 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-primary:8010/eureka/,http://eureka-secondary:8011/eureka/,http://eureka-tertiary:8012/eureka/
+  instance:
+    hostname: eureka-client-instance
+feign:
+  hystrix:
+    enabled: true
+info:
+  app:
+    description: Simple microservice that does some random calculation operations
+    name: Random Calculation Operation Service
+    version: 1.0.0
+server:
+  port: 8000
