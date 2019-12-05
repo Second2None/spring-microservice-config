@@ -1,9 +1,13 @@
 eureka:
   client:
+    fetchRegistry: true
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://eureka-primary:8010/eureka/,http://eureka-secondary:8011/eureka/,http://eureka-tertiary:8012/eureka/
   instance:
     hostname: eureka-client-instance
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 operator:
   list: '*,/'
 server:
